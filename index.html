@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F6F0E6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151A1B" media="(prefers-color-scheme: dark)">
+<title>沖繩自駕手冊｜2026.10.31 - 11.04</title>
+<meta name="description" content="2026.10.31 - 11.04 沖繩自駕五天四夜旅遊手冊：每日行程、Google Maps 一鍵導航、打包清單">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fredoka:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F0E6;
+  --paper:#FFFDF8;
+  --sand:#EEE6D6;
+  --tan:#D8C8AE;
+  --taupe:#A8997F;
+  --line:#E5D9C6;
+  --ink:#35302A;
+  --ink-soft:#6A6152;
+  --sea:#0F6E78;
+  --sea-deep:#0B4C54;
+  --sea-soft:rgba(15,110,120,.09);
+  --on-sea:#FFFDF8;
+  --coral:#C9553F;
+  --dot:rgba(15,110,120,.07);
+  --shadow:0 2px 10px rgba(11,76,84,.07),0 10px 28px rgba(78,59,39,.09);
+  --shadow-soft:0 1px 4px rgba(78,59,39,.08);
+  --r-lg:24px;
+  --r-md:16px;
+  --font-tc:"Noto Sans TC",-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+  --font-en:"Fredoka",var(--font-tc);
+  --font-script:"Caveat",cursive;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#151A1B;
+    --paper:#1E2627;
+    --sand:#263132;
+    --tan:#3E4D4C;
+    --taupe:#8FA19E;
+    --line:#2F3B3B;
+    --ink:#ECE7DE;
+    --ink-soft:#B2AA9C;
+    --sea:#5DBCC4;
+    --sea-deep:#A6DEE2;
+    --sea-soft:rgba(93,188,196,.12);
+    --on-sea:#0E1A1B;
+    --coral:#F08A72;
+    --dot:rgba(166,222,226,.06);
+    --shadow:0 2px 10px rgba(0,0,0,.25),0 10px 28px rgba(0,0,0,.30);
+    --shadow-soft:0 1px 4px rgba(0,0,0,.3);
+    color-scheme:dark;
+  }
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  font-family:var(--font-tc);
+  background:var(--bg);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.65;
+  background-image:radial-gradient(var(--dot) 1.2px,transparent 1.2px);
+  background-size:22px 22px;
+}
+.wrap{max-width:480px;margin:0 auto;padding-bottom:40px}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font-family:inherit;color:inherit}
+.ic{width:18px;height:18px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic.sm{width:15px;height:15px}
+:focus-visible{outline:3px solid var(--sea);outline-offset:2px;border-radius:8px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-radius:0 0 28px 28px;box-shadow:var(--shadow);background:var(--sand)}
+.hero img{width:100%;height:min(76vw,330px);object-fit:cover;object-position:58% 50%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,40,44,.30) 0%,rgba(8,40,44,0) 28%,rgba(8,40,44,0) 46%,rgba(8,40,44,.66) 100%)}
+.hero-top{position:absolute;top:calc(14px + env(safe-area-inset-top));left:16px;right:16px;display:flex;justify-content:space-between;align-items:center;z-index:1}
+.hero-badge{font-family:var(--font-en);font-weight:600;letter-spacing:.14em;font-size:13px;color:#fff;background:rgba(11,76,84,.82);padding:7px 14px;border-radius:999px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.hero-date{font-family:var(--font-en);font-weight:500;font-size:13px;letter-spacing:.05em;color:#0B4C54;background:rgba(255,253,248,.92);padding:7px 14px;border-radius:999px}
+.hero-title{position:absolute;left:0;right:0;bottom:16px;text-align:center;color:#fff;z-index:1;padding:0 20px}
+.hero-title .script{font-family:var(--font-script);font-weight:600;font-size:clamp(38px,11vw,48px);line-height:1.05;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.hero-title .sub{margin-top:2px;font-size:14px;font-weight:700;letter-spacing:.28em;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.hero-title .tag{display:inline-block;margin-top:8px;font-family:var(--font-en);font-weight:600;font-size:12px;letter-spacing:.22em;background:#0F6E78;padding:5px 16px;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+
+/* ---------- sticky nav ---------- */
+.nav{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.nav-scroll{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.nav-scroll::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:48px;min-width:56px;padding:0 14px;border-radius:16px;color:var(--sea-deep);background:var(--paper);border:1.5px solid var(--line);text-decoration:none;white-space:nowrap;line-height:1.15;transition:background .18s,color .18s,transform .1s;cursor:pointer;touch-action:manipulation;position:relative}
+.nav a b{font-size:14.5px;font-weight:700}
+.nav a small{font-size:11px;font-weight:500;color:var(--ink-soft)}
+.nav a:active{transform:scale(.95)}
+.nav a.on{background:var(--sea);border-color:var(--sea);color:var(--on-sea)}
+.nav a.on small{color:var(--on-sea);opacity:.85}
+.nav a.today::after{content:"";position:absolute;top:5px;right:6px;width:7px;height:7px;border-radius:50%;background:var(--coral)}
+.today-pill{display:inline-block;margin-left:6px;font-size:12px;font-weight:700;background:var(--coral);color:#fff;padding:3px 10px;border-radius:999px;vertical-align:1px}
+
+/* ---------- sections (tab pages) ---------- */
+section{padding:28px 16px 6px;scroll-margin-top:74px;display:none}
+section.show{display:block;animation:pagein .26s ease-out}
+@keyframes pagein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.pager{display:flex;gap:10px;margin:4px 0 18px}
+.pager a{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:56px;padding:8px 16px;background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r-md);text-decoration:none;box-shadow:var(--shadow-soft);transition:transform .1s;cursor:pointer;touch-action:manipulation}
+.pager a:active{transform:scale(.96)}
+.pager a small{font-size:12px;color:var(--ink-soft);font-weight:700;letter-spacing:.06em}
+.pager a b{font-size:15.5px;color:var(--sea-deep)}
+.pager a.next{text-align:right}
+.pager a.spacer{visibility:hidden}
+
+.sec-head{text-align:center;margin-bottom:18px}
+.sec-head .script{font-family:var(--font-script);font-weight:600;font-size:34px;color:var(--taupe);line-height:1}
+.sec-head h2{font-size:24px;font-weight:900;color:var(--sea-deep);letter-spacing:.08em;margin-top:2px}
+.sec-head .rule{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px;color:var(--taupe)}
+.sec-head .rule::before,.sec-head .rule::after{content:"";width:52px;border-top:2px dashed var(--tan)}
+
+.card{background:var(--paper);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:20px;margin-bottom:18px;overflow:hidden}
+.card h3{font-size:18px;font-weight:900;color:var(--sea-deep);display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.card h3 .ic{color:var(--sea)}
+.muted{color:var(--ink-soft);font-size:14px}
+
+/* overview rows */
+.pkg{display:grid;grid-template-columns:92px 1fr;row-gap:14px;column-gap:14px}
+.pkg dt{position:relative;padding-left:14px;font-weight:900;color:var(--sea);font-size:16.5px;align-self:start}
+.pkg dt::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--sea)}
+.pkg dt small{display:block;font-family:var(--font-en);font-weight:500;font-size:10.5px;letter-spacing:.18em;color:var(--taupe);white-space:nowrap}
+.pkg dd{align-self:end}
+.days{display:grid;gap:6px}
+.days a{display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 12px;background:var(--sand);border-radius:12px;text-decoration:none;font-size:14.5px;cursor:pointer;touch-action:manipulation}
+.days a b{font-family:var(--font-en);font-weight:600;color:var(--sea);min-width:54px}
+.days a .ic{margin-left:auto;color:var(--taupe)}
+
+/* stay / car */
+.photo{border-radius:var(--r-md);margin:-4px 0 14px;overflow:hidden;background:var(--sand)}
+.photo img{width:100%;height:190px;object-fit:cover}
+.kv{display:flex;gap:10px;align-items:flex-start;padding:9px 0;font-size:15px}
+.kv + .kv{border-top:1px dashed var(--line)}
+.kv .ic{margin-top:3px;color:var(--sea)}
+.kv b{font-weight:700}
+.tips{list-style:none;display:grid;gap:10px}
+.tips li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.tips li .ic{margin-top:3px;color:var(--sea)}
+
+/* buttons */
+.btnrow{display:flex;gap:10px;margin-top:14px}
+.btn{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;min-height:48px;border-radius:14px;font-size:15.5px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:transform .1s;touch-action:manipulation}
+.btn:active{transform:scale(.96)}
+.btn-map{background:var(--sea);color:var(--on-sea);box-shadow:0 4px 12px rgba(11,76,84,.25)}
+.btn-line{background:var(--paper);color:var(--sea-deep);border:1.5px solid var(--tan)}
+
+/* ---------- day sections ---------- */
+.day-header{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);margin-bottom:16px;background:var(--sand)}
+.day-header img{width:100%;height:176px;object-fit:cover}
+.day-header::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,40,44,.06),rgba(8,40,44,.6))}
+.day-header .cap{position:absolute;left:18px;right:18px;bottom:14px;z-index:1;color:#fff}
+.day-header .cap .d{font-family:var(--font-en);font-weight:700;font-size:34px;line-height:1;letter-spacing:.04em;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.day-header .cap .t{font-size:15px;font-weight:700;margin-top:4px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.day-header .cap .dt{display:inline-block;margin-top:6px;font-size:13.5px;font-weight:700;background:rgba(255,253,248,.92);color:#0B4C54;padding:3px 12px;border-radius:999px}
+
+/* timeline */
+.tl{position:relative;padding:4px 0 4px 2px}
+.tl-item{position:relative;display:grid;grid-template-columns:62px 1fr;gap:14px;padding-bottom:22px}
+.tl-item:last-child{padding-bottom:4px}
+.tl-item::before{content:"";position:absolute;left:69px;top:22px;bottom:-4px;border-left:2px dashed var(--tan)}
+.tl-item:last-child::before{display:none}
+.tl-item::after{content:"";position:absolute;left:64px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--sea);border:3px solid var(--sand)}
+.tl-time{font-family:var(--font-en);font-weight:600;font-size:15px;color:var(--sea);text-align:right;letter-spacing:.02em;line-height:1.4;padding-top:2px}
+.tl-time small{display:block;font-size:12px;color:var(--ink-soft);font-weight:500}
+.tl-body{padding-left:16px;min-width:0}
+.tl-body .t{font-weight:700;font-size:16.5px;color:var(--sea-deep);line-height:1.45}
+.tl-body p{font-size:15px;margin-top:3px}
+.tl-body .note{font-size:14px;color:var(--ink-soft);margin-top:4px}
+.warn{display:inline-flex;align-items:flex-start;gap:6px;font-size:13.5px;color:var(--sea-deep);background:var(--sea-soft);border-radius:8px;padding:4px 10px;margin-top:6px;line-height:1.5}
+.warn .ic{width:15px;height:15px;margin-top:2px}
+
+/* address + copy */
+.addr{display:flex;align-items:center;gap:4px;margin-top:4px;font-size:13px;color:var(--ink-soft);line-height:1.45}
+.addr span{min-width:0;overflow-wrap:anywhere}
+.copy{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin:-10px -8px -10px 0;background:none;border:0;border-radius:12px;color:var(--sea);cursor:pointer;touch-action:manipulation}
+.copy:active{background:var(--sea-soft)}
+
+/* place nav chip */
+.place{display:inline-flex;align-items:center;gap:6px;min-height:44px;margin:8px 8px 0 0;padding:6px 14px 6px 11px;background:var(--sand);border:1.5px solid var(--tan);border-radius:999px;font-size:14.5px;font-weight:700;color:var(--sea-deep);text-decoration:none;transition:transform .1s;touch-action:manipulation;cursor:pointer;line-height:1.3}
+.place:active{transform:scale(.95)}
+.place .ic{color:var(--sea)}
+.place small{font-weight:500;color:var(--ink-soft)}
+
+/* option list */
+.opts{background:var(--sand);border-radius:var(--r-md);padding:14px;margin-top:12px}
+.opts .ot{font-size:14.5px;font-weight:900;color:var(--sea);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.opt{padding:10px 0}
+.opt + .opt{border-top:1px dashed var(--tan)}
+.opt .k{font-size:12.5px;font-weight:700;color:var(--ink-soft)}
+.opt .place{background:var(--paper);margin-top:4px}
+
+/* meals */
+.meals{display:grid;gap:8px;margin-top:4px}
+.meal{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center;background:var(--sand);border-radius:var(--r-md);padding:10px 12px}
+.meal .b{width:40px;height:40px;border-radius:50%;background:var(--sea);color:var(--on-sea);font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center}
+.meal .c{font-size:14.5px;line-height:1.5}
+.meal .c b{font-size:15px;color:var(--sea-deep)}
+
+/* polaroids */
+.shots{display:flex;align-items:flex-start;gap:14px;overflow-x:auto;padding:14px 4px 18px;-webkit-overflow-scrolling:touch;scrollbar-width:none;scroll-snap-type:x proximity}
+.shots::-webkit-scrollbar{display:none}
+.shot{flex:0 0 auto;background:#fff;padding:8px 8px 10px;border-radius:6px;box-shadow:var(--shadow);position:relative;scroll-snap-align:start}
+.shot:nth-child(odd){transform:rotate(-2deg)}
+.shot:nth-child(even){transform:rotate(1.6deg)}
+.shot::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-2deg);width:58px;height:18px;background:rgba(216,200,174,.8);border-radius:2px}
+.shot img{width:148px;height:148px;object-fit:cover;border-radius:3px;background:#eee}
+.shot.tall img{width:132px;height:186px}
+.shot figcaption{font-family:var(--font-script);font-size:19px;font-weight:600;color:#4A4236;text-align:center;line-height:1;margin-top:8px}
+
+/* ---------- checklist ---------- */
+.ck-progress{display:flex;align-items:center;gap:12px;background:var(--paper);border-radius:var(--r-md);box-shadow:var(--shadow-soft);padding:12px 16px;margin-bottom:16px}
+.ck-progress .bar{flex:1;height:10px;border-radius:999px;background:var(--sand);overflow:hidden}
+.ck-progress .bar i{display:block;height:100%;width:0;border-radius:999px;background:var(--sea);transition:width .25s ease-out}
+.ck-progress .num{font-family:var(--font-en);font-weight:600;font-size:15px;color:var(--sea);min-width:64px;text-align:right}
+.ck{display:flex;align-items:center;gap:12px;min-height:48px;padding:4px 2px;border-top:1px dashed var(--line);cursor:pointer;touch-action:manipulation}
+.ck:first-of-type{border-top:0}
+.ck input{position:absolute;opacity:0;width:1px;height:1px}
+.ck .box{flex:0 0 auto;width:24px;height:24px;border-radius:8px;border:2px solid var(--tan);background:var(--paper);display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
+.ck .box .ic{width:14px;height:14px;stroke-width:3.2;opacity:0;transform:scale(.5);transition:opacity .15s,transform .15s;color:var(--on-sea)}
+.ck input:checked + .box{background:var(--sea);border-color:var(--sea)}
+.ck input:checked + .box .ic{opacity:1;transform:scale(1)}
+.ck input:focus-visible + .box{outline:3px solid var(--sea);outline-offset:2px}
+.ck .lb{font-size:15.5px;transition:color .15s}
+.ck input:checked ~ .lb{color:var(--taupe);text-decoration:line-through}
+.ck .lb small{color:var(--ink-soft);font-size:13px}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translate(-50%,16px);opacity:0;pointer-events:none;background:var(--sea-deep);color:var(--bg);font-size:14.5px;font-weight:700;padding:10px 18px;border-radius:999px;box-shadow:var(--shadow);transition:opacity .2s,transform .2s;z-index:200}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* footer */
+footer{text-align:center;padding:28px 20px calc(30px + env(safe-area-inset-bottom))}
+footer .script{font-family:var(--font-script);font-weight:600;font-size:30px;color:var(--taupe)}
+footer .tag{display:inline-block;margin-top:8px;font-family:var(--font-en);font-weight:600;font-size:13px;letter-spacing:.24em;background:var(--sea);color:var(--on-sea);padding:7px 20px;border-radius:6px}
+footer p{margin-top:12px;font-size:12.5px;color:var(--ink-soft)}
+footer p a{color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<!-- icon sprite (Lucide paths) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-nav" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M2 17h20"/><path d="M6 8v2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-cake" viewBox="0 0 24 24"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M14 10h4"/><path d="M14 14h4"/></symbol>
+</svg>
+
+<div class="wrap">
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <img src="assets/hero.webp" alt="從展望台俯瞰古宇利大橋與翡翠色海面" width="1280" height="853" fetchpriority="high">
+  <div class="hero-top">
+    <span class="hero-badge">OKINAWA</span>
+    <span class="hero-date">2026.10.31 - 11.04</span>
+  </div>
+  <div class="hero-title">
+    <div class="script">Hello Okinawa</div>
+    <div class="sub">沖繩自駕五日遊</div>
+    <span class="tag">ROAD TRIP</span>
+  </div>
+</header>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="頁面導覽">
+  <div class="nav-scroll">
+    <a href="#info"><b>總覽</b><small>Info</small></a>
+    <a href="#day1"><b>10/31</b><small>六</small></a>
+    <a href="#day2"><b>11/1</b><small>日</small></a>
+    <a href="#day3"><b>11/2</b><small>一</small></a>
+    <a href="#day4"><b>11/3</b><small>二</small></a>
+    <a href="#day5"><b>11/4</b><small>三</small></a>
+    <a href="#packing"><b>清單</b><small>Packing</small></a>
+  </div>
+</nav>
+
+<main>
+<!-- ============ INFO ============ -->
+<section id="info" aria-labelledby="info-h">
+  <div class="sec-head">
+    <div class="script">Our Island Trip</div>
+    <h2 id="info-h">旅程總覽</h2>
+    <div class="rule" aria-hidden="true">~</div>
+  </div>
+
+  <div class="card">
+    <dl class="pkg">
+      <dt><small>WHERE</small>地點</dt>
+      <dd><b>沖繩本島</b>　那霸 · 本部 · 古宇利島</dd>
+      <dt><small>WHEN</small>時間</dt>
+      <dd>2026.10.31 - 11.04<span class="muted">（五天四夜）</span></dd>
+      <dt><small>HOW</small>交通</dt>
+      <dd>租車自駕　10/31 取車，11/3 還車</dd>
+    </dl>
+    <div class="shots" style="padding-bottom:6px;margin-top:10px">
+      <figure class="shot"><img src="assets/whaleshark.webp" alt="美麗海水族館黑潮之海的鯨鯊" width="148" height="148" loading="lazy"><figcaption>Churaumi</figcaption></figure>
+      <figure class="shot"><img src="assets/kouri-view.webp" alt="古宇利島周邊海景" width="148" height="148" loading="lazy"><figcaption>Kouri</figcaption></figure>
+      <figure class="shot tall"><img src="assets/canele.webp" alt="可麗露" width="132" height="186" loading="lazy"><figcaption>Sweets</figcaption></figure>
+      <figure class="shot"><img src="assets/tacorice.webp" alt="塔可飯" width="148" height="148" loading="lazy"><figcaption>Taco rice</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><svg class="ic"><use href="#i-clock"/></svg>每日重點</h3>
+    <div class="days">
+      <a href="#day1"><b>10/31</b>取車 · 涮涮鍋 · 國際通<svg class="ic sm"><use href="#i-chev"/></svg></a>
+      <a href="#day2"><b>11/1</b>波上宮 · 港川外人住宅 · 永旺<svg class="ic sm"><use href="#i-chev"/></svg></a>
+      <a href="#day3"><b>11/2</b>美麗海水族館 · 古宇利島<svg class="ic sm"><use href="#i-chev"/></svg></a>
+      <a href="#day4"><b>11/3</b>首里城 · 敘敘苑 · 瀨長島<svg class="ic sm"><use href="#i-chev"/></svg></a>
+      <a href="#day5"><b>11/4</b>退房 · 搭計程車去機場<svg class="ic sm"><use href="#i-chev"/></svg></a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><svg class="ic"><use href="#i-bed"/></svg>住宿｜Hotel Cocktail Stay Naha</h3>
+    <div class="photo"><img src="assets/kokusai.webp" alt="飯店附近的國際通街景" width="480" height="320" loading="lazy"></div>
+    <div class="kv">
+      <svg class="ic"><use href="#i-clock"/></svg>
+      <div><b>四晚</b>｜10/31 入住，11/4 約 10:00 退房</div>
+    </div>
+    <div class="kv">
+      <svg class="ic"><use href="#i-pin"/></svg>
+      <div class="addr" style="margin:0;font-size:15px;color:var(--ink)"><span>1 Chome-29-7 Matsuyama, Naha, Okinawa 900-0032</span><button class="copy" type="button" data-copy="1 Chome-29-7 Matsuyama, Naha, Okinawa 900-0032" aria-label="複製飯店地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+    </div>
+    <div class="btnrow">
+      <a class="btn btn-map" data-dest="Hotel Cocktail Stay Naha, 1 Chome-29-7 Matsuyama, Naha"><svg class="ic"><use href="#i-nav"/></svg>導航到飯店</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><svg class="ic"><use href="#i-car"/></svg>租車｜OTS 臨空豐崎營業所</h3>
+    <div class="kv">
+      <svg class="ic"><use href="#i-clock"/></svg>
+      <div><b>10/31 17:30 取車</b>　·　<b>11/3 下午還車</b></div>
+    </div>
+    <div class="kv">
+      <svg class="ic"><use href="#i-pin"/></svg>
+      <div class="addr" style="margin:0;font-size:15px;color:var(--ink)"><span>3-37 Toyosaki, Tomigusuku, Okinawa 901-0225（那霸機場附近）</span><button class="copy" type="button" data-copy="3-37 Toyosaki, Tomigusuku, Okinawa 901-0225" aria-label="複製租車營業所地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+    </div>
+    <div class="btnrow">
+      <a class="btn btn-map" data-dest="OTSレンタカー 臨空豊崎営業所"><svg class="ic"><use href="#i-nav"/></svg>導航到租車處</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><svg class="ic"><use href="#i-info"/></svg>自駕小提醒</h3>
+    <ul class="tips">
+      <li><svg class="ic"><use href="#i-id"/></svg><span>取車要帶<b>台灣駕照正本＋日文譯本</b>和護照。</span></li>
+      <li><svg class="ic"><use href="#i-car"/></svg><span>日本<b>靠左行駛</b>，右轉要特別小心對向來車。</span></li>
+      <li><svg class="ic"><use href="#i-clock"/></svg><span>那霸到美麗海水族館<b>單程約 2 小時</b>。</span></li>
+      <li><svg class="ic"><use href="#i-sun"/></svg><span>11/3 是日本國定假日（文化之日），景點和停車場可能比較多人。</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ DAY 1 ============ -->
+<section id="day1" aria-label="Day 1 10月31日">
+  <div class="day-header">
+    <img src="assets/day1-header.webp" alt="國際通夜晚街景" width="960" height="640" loading="lazy">
+    <div class="cap"><div class="d">10/31</div><div class="t">Day 1　取車 · 國際通</div><span class="dt">星期六</span></div>
+  </div>
+
+  <div class="card">
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-time">17:30</div>
+        <div class="tl-body">
+          <div class="t">租車取車</div>
+          <p class="note">OTS 臨空豐崎營業所（那霸機場）</p>
+          <a class="place" data-dest="OTSレンタカー 臨空豊崎営業所"><svg class="ic sm"><use href="#i-pin"/></svg>OTS 臨空豐崎營業所</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">取車後</div>
+        <div class="tl-body">
+          <div class="t">飯店放行李</div>
+          <div class="addr"><span>1 Chome-29-7 Matsuyama, Naha</span><button class="copy" type="button" data-copy="1 Chome-29-7 Matsuyama, Naha, Okinawa 900-0032" aria-label="複製飯店地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+          <a class="place" data-dest="Hotel Cocktail Stay Naha, 1 Chome-29-7 Matsuyama, Naha"><svg class="ic sm"><use href="#i-pin"/></svg>Hotel Cocktail Stay Naha</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">19:00</div>
+        <div class="tl-body">
+          <div class="t">晚餐｜Shima Shabushabu Nakama</div>
+          <p class="note">沖繩涮涮鍋，在地下一樓（B1）。</p>
+          <div class="addr"><span>3 Chome-3-1 Kumoji, Naha B1</span><button class="copy" type="button" data-copy="〒900-0015 Okinawa, Naha, Kumoji, 3 Chome-3-1 B1" aria-label="複製餐廳地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+          <a class="place" data-dest="Shima Shabushabu Nakama, 3 Chome-3-1 Kumoji, Naha"><svg class="ic sm"><use href="#i-pin"/></svg>Shima Shabushabu Nakama</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">飯後</div>
+        <div class="tl-body">
+          <div class="t">國際通逛街</div>
+          <p>買伴手禮和藥妝，下面是想逛的店。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="opts">
+      <div class="ot"><svg class="ic sm"><use href="#i-bag"/></svg>國際通口袋名單</div>
+      <div class="opt">
+        <div class="k">宅姐想逛</div>
+        <a class="place" data-dest="長七屋 国際通り久茂地店"><svg class="ic sm"><use href="#i-pin"/></svg>長七屋 國際通久茂地店</a>
+        <div class="addr"><span>3 Chome-29-65 Kumoji, Naha 野原ビル 1F</span><button class="copy" type="button" data-copy="〒900-0021 Okinawa, Naha, Kumoji, 3 Chome-29-65 野原ビル 1F" aria-label="複製長七屋地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+      </div>
+      <div class="opt">
+        <div class="k">藥妝・零食</div>
+        <a class="place" data-dest="ドン・キホーテ 国際通り店"><svg class="ic sm"><use href="#i-pin"/></svg>唐吉訶德 國際通店</a>
+        <div class="addr"><span>3 Chome-29-66 Kumoji, Naha</span><button class="copy" type="button" data-copy="3 Chome-29-66 Kumoji, Naha, Okinawa 900-0015" aria-label="複製唐吉訶德地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+      </div>
+      <div class="opt">
+        <div class="k">盲盒公仔</div>
+        <a class="place" data-dest="POP MART 那覇国際通り店"><svg class="ic sm"><use href="#i-pin"/></svg>POP MART 那覇國際通店</a>
+        <div class="addr"><span>2 Chome-5-7 Matsuo, Naha</span><button class="copy" type="button" data-copy="2 Chome-5-7 Matsuo, Naha, Okinawa 900-0014" aria-label="複製 POP MART 地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+      </div>
+    </div>
+
+    <div class="shots">
+      <figure class="shot"><img src="assets/shabu.webp" alt="涮涮鍋" width="148" height="148" loading="lazy"><figcaption>Shabu shabu</figcaption></figure>
+      <figure class="shot"><img src="assets/kokusai.webp" alt="國際通白天街景" width="148" height="148" loading="lazy"><figcaption>Kokusai st.</figcaption></figure>
+    </div>
+
+    <div class="meals">
+      <div class="meal"><div class="b">晚</div><div class="c"><b>Shima Shabushabu Nakama</b> 涮涮鍋</div></div>
+      <div class="meal"><div class="b">宿</div><div class="c">Hotel Cocktail Stay Naha</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 2 ============ -->
+<section id="day2" aria-label="Day 2 11月1日">
+  <div class="day-header">
+    <img src="assets/day2-header.webp" alt="建在海邊斷崖上的波上宮" width="960" height="630" loading="lazy">
+    <div class="cap"><div class="d">11/01</div><div class="t">Day 2　波上宮 · 港川</div><span class="dt">星期日</span></div>
+  </div>
+
+  <div class="card">
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-time">上午</div>
+        <div class="tl-body">
+          <div class="t">波上宮</div>
+          <p>參拜、拍照，順便看看神社旁的波之上海灘。</p>
+          <span class="warn"><svg class="ic"><use href="#i-clock"/></svg>開放 9:00 - 17:00</span>
+          <div class="addr"><span>1 Chome-25-11 Wakasa, Naha</span><button class="copy" type="button" data-copy="1 Chome-25-11 Wakasa, Naha, Okinawa 900-0031" aria-label="複製波上宮地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+          <a class="place" data-dest="波上宮 那覇"><svg class="ic sm"><use href="#i-pin"/></svg>波上宮</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">中午</div>
+        <div class="tl-body">
+          <div class="t">港川外人住宅</div>
+          <p>逛特色小店、咖啡廳和甜點店，參考店家在下面。</p>
+          <div class="addr"><span>2 Chome-18-3 Minatogawa, Urasoe</span><button class="copy" type="button" data-copy="2 Chome-18-3 Minatogawa, Urasoe, Okinawa 901-2134" aria-label="複製港川外人住宅地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+          <a class="place" data-dest="港川ステイツサイドタウン 浦添"><svg class="ic sm"><use href="#i-pin"/></svg>港川外人住宅</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">下午</div>
+        <div class="tl-body">
+          <div class="t">PARCO CITY</div>
+          <p class="note">就在港川附近，開車很快就到。</p>
+          <div class="addr"><span>3 Chome-1-1 Irijima, Urasoe</span><button class="copy" type="button" data-copy="3 Chome-1-1 Irijima, Urasoe, Okinawa 901-2123" aria-label="複製 PARCO CITY 地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+          <a class="place" data-dest="サンエー浦添西海岸 PARCO CITY"><svg class="ic sm"><use href="#i-pin"/></svg>PARCO CITY</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">晚上</div>
+        <div class="tl-body">
+          <div class="t">永旺 那霸店</div>
+          <p>可以逛很久，伴手禮、零食一次買齊。</p>
+          <span class="warn"><svg class="ic"><use href="#i-clock"/></svg>營業 8:00 - 23:00</span>
+          <div class="addr"><span>5 Chome-10-2 Kanagusuku, Naha</span><button class="copy" type="button" data-copy="5 Chome-10-2 Kanagusuku, Naha, Okinawa 901-0155" aria-label="複製永旺地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+          <a class="place" data-dest="イオン那覇店"><svg class="ic sm"><use href="#i-pin"/></svg>永旺 那霸店</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="opts">
+      <div class="ot"><svg class="ic sm"><use href="#i-cake"/></svg>港川參考店家</div>
+      <div class="opt">
+        <div class="k">自己做香水</div>
+        <a class="place" data-dest="THE FLAVOR DESIGN STORE OKINAWA 港川"><svg class="ic sm"><use href="#i-pin"/></svg>THE FLAVOR DESIGN® STORE</a>
+        <div class="addr"><span>2 Chome-16-6 Minatogawa, Urasoe</span><button class="copy" type="button" data-copy="2 Chome-16-6 Minatogawa, Urasoe, Okinawa 901-2134" aria-label="複製香水店地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+      </div>
+      <div class="opt">
+        <div class="k">水果塔</div>
+        <a class="place" data-dest="oHacorte 港川店"><svg class="ic sm"><use href="#i-pin"/></svg>oHacorte 港川店</a>
+        <div class="addr"><span>2 Chome-17-1 Minatogawa, Urasoe #18</span><button class="copy" type="button" data-copy="18, 2 Chome-17-1 Minatogawa, Urasoe, Okinawa 901-2134" aria-label="複製 oHacorte 地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+      </div>
+      <div class="opt">
+        <div class="k">可麗露</div>
+        <a class="place" data-dest="ほうき星 カヌレ 港川本店"><svg class="ic sm"><use href="#i-pin"/></svg>Houki Boshi 港川本店</a>
+        <div class="addr"><span>2 Chome-16-2 Minatogawa, Urasoe</span><button class="copy" type="button" data-copy="2 Chome-16-2 Minatogawa, Urasoe, Okinawa 901-2134" aria-label="複製可麗露店地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+      </div>
+    </div>
+
+    <div class="shots">
+      <figure class="shot"><img src="assets/naminoue.webp" alt="波上宮與波之上海灘" width="148" height="148" loading="lazy"><figcaption>Naminoue</figcaption></figure>
+      <figure class="shot"><img src="assets/tart.webp" alt="水果塔" width="148" height="148" loading="lazy"><figcaption>Fruit tart</figcaption></figure>
+      <figure class="shot tall"><img src="assets/canele.webp" alt="可麗露" width="132" height="186" loading="lazy"><figcaption>Canelé</figcaption></figure>
+    </div>
+
+    <div class="meals">
+      <div class="meal"><div class="b">點</div><div class="c">港川 <b>oHacorte 水果塔</b>、<b>Houki Boshi 可麗露</b></div></div>
+      <div class="meal"><div class="b">宿</div><div class="c">Hotel Cocktail Stay Naha</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 3 ============ -->
+<section id="day3" aria-label="Day 3 11月2日">
+  <div class="day-header">
+    <img src="assets/day3-header.webp" alt="古宇利海灘與古宇利大橋" width="960" height="640" loading="lazy">
+    <div class="cap"><div class="d">11/02</div><div class="t">Day 3　美麗海 · 古宇利島</div><span class="dt">星期一</span></div>
+  </div>
+
+  <div class="card">
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-time">07:00<small>多</small></div>
+        <div class="tl-body">
+          <div class="t">從那霸出發</div>
+          <p>到水族館車程約 2 小時，想趕 9:30 的餵食秀要早點出門。</p>
+          <span class="warn"><svg class="ic"><use href="#i-info"/></svg>出發時間再一起確認</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">早餐</div>
+        <div class="tl-body">
+          <div class="t">CAMEL SANDWICH &amp; SMOOTHIE</div>
+          <p class="note">好吃的三明治，就在水族館附近。</p>
+          <div class="addr"><span>278-1 Urasaki, Motobu</span><button class="copy" type="button" data-copy="278-1 Urasaki, Motobu, Kunigami District, Okinawa 905-0217" aria-label="複製三明治店地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+          <a class="place" data-dest="CAMEL SANDWICH & SMOOTHIE 本部町"><svg class="ic sm"><use href="#i-pin"/></svg>CAMEL SANDWICH</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">09:30</div>
+        <div class="tl-body">
+          <div class="t">美麗海水族館｜黑潮餵食</div>
+          <p class="note">在「黑潮之海」大水槽看鯨鯊吃飯。</p>
+          <div class="addr"><span>424 Ishikawa, Motobu</span><button class="copy" type="button" data-copy="424 Ishikawa, Motobu, Kunigami District, Okinawa 905-0206" aria-label="複製水族館地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+          <a class="place" data-dest="沖縄美ら海水族館"><svg class="ic sm"><use href="#i-pin"/></svg>美麗海水族館</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">11:30</div>
+        <div class="tl-body">
+          <div class="t">海豚表演</div>
+          <p class="note">在水族館外的海洋博公園 Okichan 劇場。</p>
+          <a class="place" data-dest="オキちゃん劇場"><svg class="ic sm"><use href="#i-pin"/></svg>Okichan 劇場</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">下午</div>
+        <div class="tl-body">
+          <div class="t">古宇利島</div>
+          <p>開車過古宇利大橋，海超藍，記得拍照。</p>
+          <a class="place" data-dest="古宇利大橋"><svg class="ic sm"><use href="#i-pin"/></svg>古宇利大橋</a>
+          <a class="place" data-dest="古宇利ビーチ"><svg class="ic sm"><use href="#i-pin"/></svg>古宇利海灘</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">晚上</div>
+        <div class="tl-body">
+          <div class="t">返回那霸、吃晚餐</div>
+          <p class="note">回程一樣約 2 小時，開車的人記得輪流休息。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shots">
+      <figure class="shot"><img src="assets/whaleshark.webp" alt="黑潮之海的鯨鯊" width="148" height="148" loading="lazy"><figcaption>Whale shark</figcaption></figure>
+      <figure class="shot"><img src="assets/dolphin.webp" alt="Okichan 劇場海豚跳躍" width="148" height="148" loading="lazy"><figcaption>Dolphins</figcaption></figure>
+      <figure class="shot"><img src="assets/kouri-view.webp" alt="古宇利島海景" width="148" height="148" loading="lazy"><figcaption>Kouri</figcaption></figure>
+    </div>
+
+    <div class="meals">
+      <div class="meal"><div class="b">早</div><div class="c"><b>CAMEL SANDWICH &amp; SMOOTHIE</b></div></div>
+      <div class="meal"><div class="b">晚</div><div class="c">回那霸再決定</div></div>
+      <div class="meal"><div class="b">宿</div><div class="c">Hotel Cocktail Stay Naha</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 4 ============ -->
+<section id="day4" aria-label="Day 4 11月3日">
+  <div class="day-header">
+    <img src="assets/day4-header.webp" alt="首里城守禮門" width="960" height="643" loading="lazy">
+    <div class="cap"><div class="d">11/03</div><div class="t">Day 4　首里城 · 瀨長島</div><span class="dt">星期二</span></div>
+  </div>
+
+  <div class="card">
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-time">上午</div>
+        <div class="tl-body">
+          <div class="t">首里城</div>
+          <p class="note">好像 10:00 有表演，到現場再確認。</p>
+          <span class="warn"><svg class="ic"><use href="#i-info"/></svg>正殿 2019 年火災後還在重建，可參觀範圍以現場為準</span>
+          <div class="addr"><span>1 Chome-2 Shurikinjocho, Naha</span><button class="copy" type="button" data-copy="1 Chome-2 Shurikinjocho, Naha, Okinawa 903-0815" aria-label="複製首里城地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+          <a class="place" data-dest="首里城公園"><svg class="ic sm"><use href="#i-pin"/></svg>首里城公園</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">11:30</div>
+        <div class="tl-body">
+          <div class="t">午餐｜敘敘苑燒肉 歌町店</div>
+          <p class="note">在 ルカフ オモロマチ 3F。</p>
+          <div class="addr"><span>4 Chome-19-1 Omoromachi, Naha 3F</span><button class="copy" type="button" data-copy="〒900-0006 Okinawa, Naha, Omoromachi, 4 Chome-19-1 ルカフ オモロマチ 3F" aria-label="複製敘敘苑地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+          <a class="place" data-dest="叙々苑 那覇おもろまち店"><svg class="ic sm"><use href="#i-pin"/></svg>敘敘苑 歌町店</a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">下午</div>
+        <div class="tl-body">
+          <div class="t">瀨長島</div>
+          <p>在機場旁邊，白色海景商店街，看飛機起降。</p>
+          <div class="addr"><span>174-6 Senaga, Tomigusuku</span><button class="copy" type="button" data-copy="174-6 Senaga, Tomigusuku, Okinawa 901-0233" aria-label="複製瀨長島地址"><svg class="ic sm"><use href="#i-copy"/></svg></button></div>
+          <a class="place" data-dest="瀬長島ウミカジテラス"><svg class="ic sm"><use href="#i-pin"/></svg>瀨長島 Umikaji Terrace</a>
+          <a class="place" data-dest="Taco Rice Cafe Kijimuna 瀬長島"><svg class="ic sm"><use href="#i-pin"/></svg>Taco 飯<small>Kijimuna</small></a>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">傍晚</div>
+        <div class="tl-body">
+          <div class="t">還車</div>
+          <p class="note">瀨長島過去很近。還車前記得加滿油。</p>
+          <a class="place" data-dest="OTSレンタカー 臨空豊崎営業所"><svg class="ic sm"><use href="#i-pin"/></svg>OTS 臨空豐崎營業所</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="shots">
+      <figure class="shot"><img src="assets/shuri.webp" alt="首里城正殿（火災前）" width="148" height="148" loading="lazy"><figcaption>Shuri</figcaption></figure>
+      <figure class="shot"><img src="assets/senaga.webp" alt="瀨長島 Umikaji Terrace" width="148" height="148" loading="lazy"><figcaption>Senaga</figcaption></figure>
+      <figure class="shot"><img src="assets/tacorice.webp" alt="塔可飯" width="148" height="148" loading="lazy"><figcaption>Taco rice</figcaption></figure>
+    </div>
+
+    <div class="meals">
+      <div class="meal"><div class="b">午</div><div class="c"><b>敘敘苑燒肉</b> 歌町店 11:30</div></div>
+      <div class="meal"><div class="b">點</div><div class="c">瀨長島 <b>Taco Rice Cafe Kijimuna</b></div></div>
+      <div class="meal"><div class="b">宿</div><div class="c">Hotel Cocktail Stay Naha</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAY 5 ============ -->
+<section id="day5" aria-label="Day 5 11月4日">
+  <div class="day-header">
+    <img src="assets/day5-header.webp" alt="那霸機場航廈" width="960" height="640" loading="lazy">
+    <div class="cap"><div class="d">11/04</div><div class="t">Day 5　返台</div><span class="dt">星期三</span></div>
+  </div>
+
+  <div class="card">
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-time">09:00<small>左右</small></div>
+        <div class="tl-body">
+          <div class="t">起床、整理行李</div>
+          <p class="note">檢查房間有沒有東西忘了帶，充電線最容易漏。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">10:00<small>左右</small></div>
+        <div class="tl-body">
+          <div class="t">退房，搭計程車去機場</div>
+          <p class="note">車已經前一天還了，直接請飯店叫車或路邊招計程車。</p>
+          <a class="place" data-dest="那覇空港 国際線ターミナル"><svg class="ic sm"><use href="#i-plane"/></svg>那霸機場 國際線</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="meals" style="margin-top:14px">
+      <div class="meal"><div class="b">早</div><div class="c">自理</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACKING ============ -->
+<section id="packing" aria-labelledby="packing-h">
+  <div class="sec-head">
+    <div class="script">Ready to go?</div>
+    <h2 id="packing-h">打包清單</h2>
+    <div class="rule" aria-hidden="true">~</div>
+  </div>
+
+  <div class="ck-progress" role="status" aria-live="polite">
+    <div class="bar" aria-hidden="true"><i id="ckBar"></i></div>
+    <div class="num" id="ckNum">0 / 0</div>
+  </div>
+
+  <div class="card">
+    <h3><svg class="ic"><use href="#i-id"/></svg>證件・開車</h3>
+    <label class="ck"><input type="checkbox" data-ck="d1"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><span class="lb">護照</span></label>
+    <label class="ck"><input type="checkbox" data-ck="d2"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><span class="lb">台灣駕照正本</span></label>
+    <label class="ck"><input type="checkbox" data-ck="d3"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><span class="lb">駕照日文譯本</span></label>
+    <label class="ck"><input type="checkbox" data-ck="d4"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><span class="lb">租車預約單</span></label>
+    <label class="ck"><input type="checkbox" data-ck="d5"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><span class="lb">信用卡、日圓現金</span></label>
+    <label class="ck"><input type="checkbox" data-ck="d6"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><span class="lb">網路 <small>（SIM / eSIM / 分享器）</small></span></label>
+  </div>
+
+  <div class="card">
+    <h3><svg class="ic"><use href="#i-bag"/></svg>隨身用品</h3>
+    <label class="ck"><input type="checkbox" data-ck="m1"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><span class="lb">行動電源、充電線</span></label>
+    <label class="ck"><input type="checkbox" data-ck="m2"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><span class="lb">手機車架 <small>（導航用）</small></span></label>
+    <label class="ck"><input type="checkbox" data-ck="m3"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><span class="lb">防曬、太陽眼鏡</span></label>
+    <label class="ck"><input type="checkbox" data-ck="m4"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><span class="lb">薄外套 <small>（室內冷氣、晚上海風）</small></span></label>
+    <label class="ck"><input type="checkbox" data-ck="m5"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><span class="lb">常備藥、暈車藥</span></label>
+    <label class="ck"><input type="checkbox" data-ck="m6"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><span class="lb">購物袋 <small>（裝伴手禮）</small></span></label>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="script">Have a nice trip!</div>
+  <span class="tag">OKINAWA</span>
+  <p>2026.10.31 - 11.04 · 沖繩自駕</p>
+  <p>照片來源：<a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a></p>
+</footer>
+
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+// Google Maps 導航連結：點擊直接開 Google Maps 導航到目的地
+document.querySelectorAll("[data-dest]").forEach(function(el){
+  var dest = encodeURIComponent(el.getAttribute("data-dest"));
+  el.href = "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=" + dest;
+  el.target = "_blank";
+  el.rel = "noopener";
+});
+
+// 複製地址：方便貼到租車的車用導航或 LINE
+(function(){
+  var toast = document.getElementById("toast"), timer;
+  function say(msg){
+    toast.textContent = msg;
+    toast.classList.add("on");
+    clearTimeout(timer);
+    timer = setTimeout(function(){ toast.classList.remove("on"); }, 1800);
+  }
+  function fallback(text){
+    var t = document.createElement("textarea");
+    t.value = text; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch(e){}
+    document.body.removeChild(t);
+    return ok;
+  }
+  document.addEventListener("click", function(e){
+    var b = e.target.closest(".copy");
+    if(!b) return;
+    var text = b.getAttribute("data-copy");
+    if(navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){ say("已複製地址"); }, function(){ say(fallback(text) ? "已複製地址" : "複製失敗，請長按地址"); });
+    } else {
+      say(fallback(text) ? "已複製地址" : "複製失敗，請長按地址");
+    }
+  });
+})();
+
+// 分頁模式：一次只顯示一個區塊
+(function(){
+  var order  = ["info","day1","day2","day3","day4","day5","packing"];
+  var labels = {info:"旅程總覽", day1:"10/31（六）", day2:"11/1（日）", day3:"11/2（一）", day4:"11/3（二）", day5:"11/4（三）", packing:"打包清單"};
+  var tripDates = {"2026-10-31":"day1","2026-11-01":"day2","2026-11-02":"day3","2026-11-03":"day4","2026-11-04":"day5"};
+  var hero = document.querySelector(".hero");
+  var tabs = document.querySelectorAll(".nav a");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  order.forEach(function(id, i){
+    var sec = document.getElementById(id);
+    var pager = document.createElement("div");
+    pager.className = "pager";
+    var prev = order[i-1], next = order[i+1];
+    pager.innerHTML =
+      (prev ? '<a class="prev" href="#'+prev+'"><small>← 上一頁</small><b>'+labels[prev]+'</b></a>'
+            : '<a class="spacer" aria-hidden="true" tabindex="-1"><small>.</small><b>.</b></a>') +
+      (next ? '<a class="next" href="#'+next+'"><small>下一頁 →</small><b>'+labels[next]+'</b></a>'
+            : '<a class="spacer" aria-hidden="true" tabindex="-1"><small>.</small><b>.</b></a>');
+    sec.appendChild(pager);
+  });
+
+  function show(id, scroll){
+    if(order.indexOf(id) < 0) id = "info";
+    order.forEach(function(s){
+      document.getElementById(s).classList.toggle("show", s === id);
+    });
+    tabs.forEach(function(a){
+      var on = a.getAttribute("href") === "#" + id;
+      a.classList.toggle("on", on);
+      if(on){
+        a.setAttribute("aria-current", "page");
+        a.scrollIntoView({block:"nearest", inline:"center", behavior: reduced ? "auto" : "smooth"});
+      } else {
+        a.removeAttribute("aria-current");
+      }
+    });
+    if(history.replaceState) history.replaceState(null, "", "#" + id);
+    var navTop = hero.offsetTop + hero.offsetHeight;
+    if(scroll && window.scrollY > navTop){
+      window.scrollTo({top: navTop, behavior: "auto"});
+    }
+  }
+
+  document.addEventListener("click", function(e){
+    var a = e.target.closest('.nav a, .pager a:not(.spacer), .days a');
+    if(!a) return;
+    e.preventDefault();
+    show(a.getAttribute("href").slice(1), true);
+  });
+
+  // 今天是旅程中的哪一天？標上「今天」並自動開啟該頁
+  function localDate(){
+    var d = new Date();
+    return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+  }
+  var todayId = tripDates[localDate()] || null;
+  if(todayId){
+    tabs.forEach(function(a){
+      if(a.getAttribute("href") === "#" + todayId) a.classList.add("today");
+    });
+    var dt = document.querySelector("#" + todayId + " .day-header .dt");
+    if(dt) dt.insertAdjacentHTML("afterend", '<span class="today-pill">今天</span>');
+  }
+
+  // 開頁優先序：網址 hash → 旅程當天 → 總覽
+  var initial = location.hash.slice(1);
+  if(order.indexOf(initial) < 0) initial = todayId || "info";
+  show(initial, false);
+})();
+
+// 打包清單：勾選狀態存 localStorage
+(function(){
+  var KEY = "okinawa2026-packing";
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e){}
+  var boxes = document.querySelectorAll("input[data-ck]");
+  var bar = document.getElementById("ckBar");
+  var num = document.getElementById("ckNum");
+  function refresh(){
+    var done = 0;
+    boxes.forEach(function(b){ if(b.checked) done++; });
+    bar.style.width = (done / boxes.length * 100) + "%";
+    num.textContent = done + " / " + boxes.length;
+  }
+  boxes.forEach(function(b){
+    var id = b.getAttribute("data-ck");
+    if(saved[id]) b.checked = true;
+    b.addEventListener("change", function(){
+      saved[id] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){}
+      refresh();
+    });
+  });
+  refresh();
+})();
+</script>
+</body>
+</html>
